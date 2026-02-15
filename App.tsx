@@ -170,21 +170,21 @@ const App: React.FC = () => {
             <div className="w-full lg:w-1/2 space-y-10">
               <div className="space-y-4">
                 <h4 className="text-5xl font-extrabold text-white tracking-tighter">FrictionAI</h4>
-                <p className="text-xl text-blue-100/60 font-medium">Autonomous Wealth Logic</p>
+                <p className="text-xl text-blue-100/60 font-medium">Agentic Personal Finance</p>
               </div>
 
               <p className="text-gray-400 text-lg leading-relaxed font-light">
-                Engineering self-healing financial agents that use recursive reasoning loops to optimize liquidity across distributed bank APIs.
+                Engineering personal finance agents that deduce user intent and analyze behavioral patterns to orchestrate banking services under absolute user authorization. Designed to assist via text and speech while ensuring humans remain the final decision-makers.
               </p>
 
               <div className="flex flex-wrap gap-4">
                 <div className="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col">
                   <span className="text-[9px] font-mono-tech text-gray-500 uppercase tracking-widest mb-1">Architecture</span>
-                  <span className="text-sm font-bold text-white">Event-Led Agents</span>
+                  <span className="text-sm font-bold text-white">Event Driven Agents</span>
                 </div>
                 <div className="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col">
                   <span className="text-[9px] font-mono-tech text-gray-500 uppercase tracking-widest mb-1">State Mgmt</span>
-                  <span className="text-sm font-bold text-white">Durable Workflows</span>
+                  <span className="text-sm font-bold text-white">Agent Workflows</span>
                 </div>
               </div>
             </div>

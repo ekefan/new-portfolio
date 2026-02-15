@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Cpu, Cloud, Eye, Activity, Terminal, ShieldCheck, Database, Layers } from 'lucide-react';
+import { Cpu, Cloud, Eye } from 'lucide-react';
 import { SkillCategory, CaseStudy, NavLink } from './types';
 
 export const NAV_LINKS: NavLink[] = [
@@ -16,7 +15,18 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     description: 'Engineering high-throughput APIs and robust microservices from the ground up.',
     accent: 'blue',
     icon: <Cpu className="w-8 h-8 text-blue-400" />,
-    skills: ['Java (Spring Boot)', 'Go', 'TypeScript (Node.js)', 'Python', 'PostgreSQL', 'Kafka', 'Redis']
+    skills: [
+      'Microservices', 
+      'Domain Driven Design', 
+      'Event Driven Architecture', 
+      'Unit & Integration Testing',
+      'Java (Spring Boot)', 
+      'Go', 
+      'Python', 
+      'PostgreSQL', 
+      'Kafka', 
+      'Redis'
+    ]
   },
   {
     title: 'The Platform (Infrastructure)',
