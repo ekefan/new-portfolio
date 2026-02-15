@@ -59,7 +59,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative selection:bg-blue-600/30">
+    <div className="min-h-screen relative selection:bg-blue-600/30 bg-[#030303]">
       {/* Immersive Deep Space Layers */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div 
@@ -108,7 +108,7 @@ const App: React.FC = () => {
       {/* Floating Nano Back to Top */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-8 right-8 z-40 p-3 rounded-full glass-island border-none text-blue-500 transition-all duration-700 hover:scale-110 group ${
+        className={`fixed bottom-8 right-8 z-40 p-3 rounded-full glass-island text-blue-500 transition-all duration-700 hover:scale-110 group ${
           showScrollToTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}
       >
@@ -118,11 +118,11 @@ const App: React.FC = () => {
       <Navbar />
       
       <main className="relative z-10 space-y-32 md:space-y-48">
-        <div id="hero" className="reveal active">
+        <div id="hero" className="reveal active bg-[#030303]">
           <Hero />
         </div>
 
-        {/* Section: Architecture Overview - Reverted to Former Design */}
+        {/* Section: Architecture Overview - Former Design with Borders Restored */}
         <section id="architecture" className="py-32 max-w-7xl mx-auto px-6 reveal">
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
               {[
@@ -195,7 +195,7 @@ const App: React.FC = () => {
           <Contact />
         </div>
 
-        <footer className="py-24 border-t border-white/5 relative z-20">
+        <footer className="py-24 border-t border-white/5 relative z-20 bg-[#030303]">
           <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 glass-island rounded-xl flex items-center justify-center text-blue-500 font-bold border-white/10">e</div>

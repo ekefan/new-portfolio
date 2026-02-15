@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
       isScrolled 
-        ? 'top-4 w-[95%] md:w-[70%] lg:w-[60%] glass-island border-none rounded-full px-8 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)]' 
+        ? 'top-4 w-[95%] md:w-[70%] lg:w-[60%] glass-island rounded-full px-8 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)]' 
         : 'top-0 w-full bg-transparent py-8 px-8'
     }`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full mt-4 left-0 right-0 glass-island border-none rounded-3xl p-8 flex flex-col gap-6 items-center shadow-2xl animate-in zoom-in-95 duration-300">
+        <div className="md:hidden absolute top-full mt-4 left-0 right-0 glass-island rounded-3xl p-8 flex flex-col gap-6 items-center shadow-2xl animate-in zoom-in-95 duration-300">
           {NAV_LINKS.map((link) => (
             <a 
               key={link.href} 
