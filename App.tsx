@@ -62,8 +62,9 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen relative selection:bg-blue-600/30 bg-[#030303]">
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-blue-600/[0.03] blur-[150px] rounded-full" style={{ transform: `translateY(${scrollProgress * -0.4}px)` }}></div>
-        <div className="absolute bottom-[-10%] right-[-5%] w-[60%] h-[60%] bg-purple-600/[0.02] blur-[180px] rounded-full" style={{ transform: `translateY(${scrollProgress * 0.15}px)` }}></div>
+        {/* Dampened translate values for a smoother, slower parallax effect */}
+        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-blue-600/[0.03] blur-[150px] rounded-full" style={{ transform: `translateY(${scrollProgress * -0.2}px)` }}></div>
+        <div className="absolute bottom-[-10%] right-[-5%] w-[60%] h-[60%] bg-purple-600/[0.02] blur-[180px] rounded-full" style={{ transform: `translateY(${scrollProgress * 0.08}px)` }}></div>
       </div>
 
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden 2xl:flex flex-col gap-6 items-center p-2 group/nav">
@@ -177,7 +178,7 @@ const App: React.FC = () => {
           <Contact />
         </div>
 
-        <footer className="py-16 md:py-24 border-t border-white/5 relative z-20 bg-[#030303]">
+        <footer className="py-16 md:py-24 border-t border-white/5 relative z-20 bg-[#030303] reveal">
           <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 text-center md:text-left">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 glass-island rounded-xl flex items-center justify-center text-blue-500 font-bold border-white/10">e</div>

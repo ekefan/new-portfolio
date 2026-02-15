@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark" style="scroll-behavior: smooth; background-color: #030303;">
+<html lang="en" class="dark" style="scroll-behavior: smooth; background-color: #030303; scroll-snap-type: y mandatory; scroll-padding-top: 80px;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,12 +40,15 @@
             background: rgba(59, 130, 246, 0.5);
         }
         
-        /* Elastic "Bounce" Reveal */
+        /* Refined Slower Reveal with Gentler Bounce */
         .reveal {
             opacity: 0;
-            transform: translateY(60px) scale(0.96);
-            transition: opacity 1s ease-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateY(40px) scale(0.98);
+            /* Increased durations to 2.2s and tweaked bezier for less "snap" and more "glide" */
+            transition: opacity 1.8s ease-out, transform 2.2s cubic-bezier(0.22, 1, 0.36, 1.1);
             will-change: transform, opacity;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
         }
         .reveal.active {
             opacity: 1;
@@ -57,7 +60,6 @@
             background: rgba(13, 13, 13, 0.6);
             backdrop-filter: blur(24px) saturate(180%);
             -webkit-backdrop-filter: blur(24px) saturate(180%);
-            /* Restored the subtle white borders */
             border: 1px solid rgba(255, 255, 255, 0.08); 
         }
         
