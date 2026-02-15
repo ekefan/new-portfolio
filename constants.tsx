@@ -3,20 +3,20 @@ import { Cpu, Cloud, Eye } from 'lucide-react';
 import { SkillCategory, CaseStudy, NavLink } from './types';
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Experience', href: '#architecture' },
-  { label: 'Tech Stack', href: '#stack' },
-  { label: 'Case Studies', href: '#cases' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'EXPERIENCE', href: '#architecture' },
+  { label: 'TECH STACK', href: '#stack' },
+  { label: 'CASE STUDIES', href: '#cases' },
+  { label: 'CONTACT', href: '#contact' }
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'The Core (Engineering)',
-    description: 'Engineering high-throughput APIs and robust microservices from the ground up.',
+    description: 'Engineering high-throughput APIs and robust services from the ground up.',
     accent: 'blue',
     icon: <Cpu className="w-8 h-8 text-blue-400" />,
     skills: [
-      'Microservices', 
+      'Services', 
       'Domain Driven Design', 
       'Event Driven Architecture', 
       'Unit & Integration Testing',
