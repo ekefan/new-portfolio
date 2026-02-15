@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
           <div className="flex items-center gap-8 pt-8">
              <div className="flex flex-col">
                 <span className="text-3xl font-bold text-white">3+</span>
-                <span className="text-[10px] uppercase tracking-widest text-gray-500 font-mono-tech">Years Build Exp</span>
+                <span className="text-[10px] uppercase tracking-widest text-gray-500 font-mono-tech">Exp</span>
              </div>
              <div className="h-10 w-px bg-white/10"></div>
              <div className="flex flex-col">
