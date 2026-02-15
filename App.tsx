@@ -126,7 +126,7 @@ const App: React.FC = () => {
         <section id="architecture" className="py-32 max-w-7xl mx-auto px-6 reveal">
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
               {[
-                { title: "Infrastructure", val: "AWS / GCP / TF", sub: "Cloud-Native Provisioning" },
+                { title: "Infrastructure", val: "AWS / GCP / Terraform", sub: "Cloud-Native Provisioning" },
                 { title: "Databases", val: "PostgreSQL / Mongo", sub: "Distributed Availability" },
                 { title: "Streaming", val: "Kafka / Redis", sub: "Event-Driven Backbone" },
                 { title: "Clusters", val: "K8s / Docker", sub: "Container Orchestration" },
