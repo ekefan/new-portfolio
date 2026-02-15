@@ -108,7 +108,7 @@ const App: React.FC = () => {
       {/* Floating Nano Back to Top */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-8 right-8 z-40 p-3 rounded-full glass-island text-blue-500 transition-all duration-700 hover:scale-110 group ${
+        className={`fixed bottom-8 right-8 z-40 p-3 rounded-full glass-island border-none text-blue-500 transition-all duration-700 hover:scale-110 group ${
           showScrollToTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}
       >
@@ -122,22 +122,23 @@ const App: React.FC = () => {
           <Hero />
         </div>
 
+        {/* Section: Architecture Overview - Reverted to Former Design */}
         <section id="architecture" className="py-32 max-w-7xl mx-auto px-6 reveal">
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
               {[
-                { title: "Infrastructure", val: "Terraform / AWS / GCP", sub: "Cloud-Native Provisioning" },
-                { title: "Databases", val: "PostgreSQL / Mongo / ES", sub: "Highly-Available Persistence" },
-                { title: "Distributed", val: "Kafka / Redis / PubSub", sub: "Event-Driven Backbone" },
-                { title: "Scalability", val: "Kubernetes / Docker", sub: "Container Orchestration" },
-                { title: "Security Ops", val: "SAST / SCA / DAST", sub: "Secured CI/CD pipelines" },
-                { title: "Observability", val: "OTEL / Monitoring", sub: "Distributed Monitoring" }
+                { title: "Infrastructure", val: "AWS / GCP / TF", sub: "Cloud-Native Provisioning" },
+                { title: "Databases", val: "PostgreSQL / Mongo", sub: "Distributed Availability" },
+                { title: "Streaming", val: "Kafka / Redis", sub: "Event-Driven Backbone" },
+                { title: "Clusters", val: "K8s / Docker", sub: "Container Orchestration" },
+                { title: "Security", val: "SAST / CI-Scan", sub: "DevSecOps Hardening" },
+                { title: "Observability", val: "OTEL / Jaeger", sub: "Tracing & Telemetry" }
               ].map((item, i) => (
-                <div key={i} className="p-8 rounded-3xl glass-island hover:border-blue-500/30 transition-all group flex flex-col justify-between hover:-translate-y-2">
+                <div key={i} className="p-8 rounded-[2.5rem] glass-island border-white/5 hover:border-blue-500/40 transition-all duration-700 group flex flex-col justify-between hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(0,0,0,0.6)]">
                   <div>
-                    <div className="text-[10px] font-mono-tech text-blue-500 uppercase tracking-widest mb-4 group-hover:translate-x-1 transition-transform">{item.title}</div>
-                    <div className="text-white font-bold text-lg mb-2 leading-tight">{item.val}</div>
+                    <div className="text-[9px] font-mono-tech text-blue-500 uppercase tracking-[0.3em] mb-6 group-hover:translate-x-2 transition-transform duration-500">{item.title}</div>
+                    <div className="text-white font-bold text-lg mb-2 leading-tight tracking-tight">{item.val}</div>
                   </div>
-                  <div className="text-[11px] text-gray-500 mt-4 font-mono-tech">{item.sub}</div>
+                  <div className="text-[10px] text-gray-500 mt-6 font-mono-tech leading-relaxed uppercase tracking-tighter">{item.sub}</div>
                 </div>
               ))}
            </div>
@@ -161,7 +162,7 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="group flex flex-col lg:flex-row gap-12 items-center p-10 rounded-[3rem] glass-island transition-all duration-1000 hover:shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
+          <div className="group flex flex-col lg:flex-row gap-12 items-center p-10 rounded-[3rem] glass-island border-white/5 transition-all duration-1000 hover:shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
             <div className="w-full lg:w-1/2 h-[450px] rounded-[2.5rem] overflow-hidden border border-white/5 relative group-hover:scale-[1.01] transition-transform duration-1000 shadow-2xl">
               <FrictionAIVisual />
             </div>
@@ -197,7 +198,7 @@ const App: React.FC = () => {
         <footer className="py-24 border-t border-white/5 relative z-20">
           <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 glass-island rounded-xl flex items-center justify-center text-blue-500 font-bold">e</div>
+              <div className="w-10 h-10 glass-island rounded-xl flex items-center justify-center text-blue-500 font-bold border-white/10">e</div>
               <span className="font-mono-tech text-gray-300 font-bold tracking-tighter uppercase text-sm">ekefan<span className="text-blue-500">.</span>dev</span>
             </div>
             <div className="flex gap-8 text-[9px] text-gray-500 font-mono-tech uppercase tracking-[0.3em] font-bold">
