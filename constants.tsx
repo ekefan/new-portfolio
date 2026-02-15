@@ -16,12 +16,12 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     accent: 'blue',
     icon: <Cpu className="w-8 h-8 text-blue-400" />,
     skills: [
-      'Services', 
+      'Microservices', 
       'Domain Driven Design', 
       'Event Driven Architecture', 
       'Unit & Integration Testing',
+      'Go (Primary)', 
       'Java (Spring Boot)', 
-      'Go', 
       'Python', 
       'PostgreSQL', 
       'Kafka', 
@@ -30,7 +30,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     title: 'The Platform (Infrastructure)',
-    description: 'Building zero-drift Infrastructure as Code and secured DevSecOps environments.',
+    description: 'Building zero-drift Infrastructure as Code and secured DevOps environments.',
     accent: 'purple',
     icon: <Cloud className="w-8 h-8 text-purple-400" />,
     skills: ['AWS', 'GCP', 'Terraform', 'Kubernetes', 'SAST/SCA/DAST', 'GitHub Actions', 'Secured CI/CD']
@@ -57,9 +57,9 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'jam-forte',
     title: 'The Reliability Engine (Jam-Forte)',
-    headline: '99.99% Uptime & Blue-Green Orchestration',
-    context: 'Automated infrastructure provisioning and replaced legacy manual cycles with high-velocity on-commit automation.',
-    tech: ['Terraform', 'GitHub Actions', 'Kubernetes'],
+    headline: 'Horizontally Scaled Healing Infrastructure',
+    context: 'Adopted Kubernetes to support horizontally scaled services, enabling automated healing and blue-green deployments via CI/CD, reducing deployment lead time from days to minutes and significantly lowering MTTR by eliminating manual recovery steps.',
+    tech: ['Terraform', 'Kubernetes', 'Blue-Green CI/CD'],
     metrics: 'MTTR < 15m, < 5m Lead Time',
     category: 'DevOps'
   },

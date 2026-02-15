@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import SystemStack from './components/SystemStack';
 import CaseStudies from './components/CaseStudies';
 import Contact from './components/Contact';
+import { FrictionAIVisual } from './components/ProjectVisuals';
 import { ChevronUp } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -18,13 +19,11 @@ const App: React.FC = () => {
       setScrollProgress(progress);
       setShowScrollToTop(window.scrollY > 400);
 
-      // Section Monitoring for Active States
       const sections = ['hero', 'architecture', 'stack', 'cases', 'contact'];
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Adjust active state detection threshold
           if (rect.top <= 300 && rect.bottom >= 300) {
             setActiveSection(sectionId);
             break;
@@ -32,7 +31,6 @@ const App: React.FC = () => {
         }
       }
 
-      // Triggering Entrance Animations
       const revealElements = document.querySelectorAll('.reveal');
       revealElements.forEach(el => {
         const rect = el.getBoundingClientRect();
@@ -50,7 +48,7 @@ const App: React.FC = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 110; // Clearance for fixed Navbar
+      const offset = 110; 
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -63,13 +61,11 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen relative selection:bg-blue-600/30 bg-[#030303]">
-      {/* Dynamic Background Ambience */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-blue-600/[0.03] blur-[150px] rounded-full" style={{ transform: `translateY(${scrollProgress * -0.4}px)` }}></div>
         <div className="absolute bottom-[-10%] right-[-5%] w-[60%] h-[60%] bg-purple-600/[0.02] blur-[180px] rounded-full" style={{ transform: `translateY(${scrollProgress * 0.15}px)` }}></div>
       </div>
 
-      {/* Side Navigation Dots */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden 2xl:flex flex-col gap-6 items-center p-2 group/nav">
         {[
           { id: 'hero', label: 'ROOT' },
@@ -96,7 +92,6 @@ const App: React.FC = () => {
         ))}
       </div>
 
-      {/* Scroll to Top Trigger */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className={`fixed bottom-8 right-8 z-40 p-3 rounded-full glass-island text-blue-500 transition-all duration-700 hover:scale-110 group ${
@@ -113,7 +108,6 @@ const App: React.FC = () => {
           <Hero />
         </div>
 
-        {/* Experience Section */}
         <section id="architecture" className="py-16 md:py-32 max-w-7xl mx-auto px-6 reveal">
            <div className="text-left mb-12 md:mb-16">
               <h2 className="text-[10px] md:text-sm font-mono-tech text-blue-500 uppercase tracking-[0.3em] mb-4">Architecture Ingress</h2>
@@ -125,7 +119,7 @@ const App: React.FC = () => {
                 { title: "Databases", val: "PostgreSQL / Mongo", sub: "Distributed Availability" },
                 { title: "Streaming", val: "Kafka / Redis", sub: "Event-Driven Backbone" },
                 { title: "Clusters", val: "K8s / Docker", sub: "Container Orchestration" },
-                { title: "Security", val: "SAST / CI-Scan", sub: "DevSecOps Hardening" },
+                { title: "Security", val: "SAST / SCA / DAST", sub: "DevSecOps Hardening" },
                 { title: "Observability", val: "OTEL / Jaeger", sub: "Tracing & Telemetry" }
               ].map((item, i) => (
                 <div key={i} className="p-6 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] glass-island border-white/5 hover:border-blue-500/40 transition-all duration-700 group flex flex-col justify-between hover:-translate-y-2 md:hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
@@ -139,17 +133,46 @@ const App: React.FC = () => {
            </div>
         </section>
 
-        {/* Tech Stack Section with fixed ID routing */}
         <div id="stack" className="reveal">
           <SystemStack />
         </div>
         
-        {/* Case Studies Section with fixed ID routing */}
         <div id="cases" className="reveal">
           <CaseStudies />
         </div>
 
-        {/* Contact Section with fixed ID routing */}
+        {/* NEURAL_LAB / SANDBOX - Not in Nav */}
+        <section className="py-24 md:py-48 bg-[#030303] reveal overflow-hidden border-y border-white/[0.02]">
+          <div className="max-w-7xl mx-auto px-6">
+             <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+                <div className="w-full lg:w-1/2 space-y-6">
+                   <div className="space-y-4">
+                      <h2 className="text-[10px] md:text-sm font-mono-tech text-blue-500 uppercase tracking-[0.4em]">Laboratory_Environment</h2>
+                      <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight uppercase">ENGINEERING_SANDBOX</h3>
+                      <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
+                         An experimental playground for emerging backend paradigms. Currently building an agentic execution runtime for personal finance.
+                      </p>
+                   </div>
+                   
+                   <div className="p-4 md:p-6 bg-blue-500/5 border border-blue-500/20 rounded-2xl">
+                      <div className="text-[9px] md:text-[11px] font-mono-tech text-blue-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                         Project_Status: WIP / ALPHA_0.9.5
+                      </div>
+                      <p className="text-[11px] md:text-sm text-gray-400 leading-relaxed italic">
+                         "Developing a cognitive orchestration layer that interprets user intent, analyses previous behaviours, and fine-tunes responses tailored to each user's experience."
+                      </p>
+                   </div>
+                </div>
+
+                <div className="w-full lg:w-1/2 h-[400px] md:h-[500px] bg-[#0a0a0a] rounded-[2rem] md:rounded-[3rem] border border-white/5 relative shadow-2xl overflow-hidden group">
+                   <FrictionAIVisual />
+                   <div className="absolute top-6 right-6 px-3 py-1 bg-black/40 backdrop-blur-md rounded border border-white/10 text-[8px] font-mono-tech text-blue-500 uppercase tracking-widest">Live_Simulation</div>
+                </div>
+             </div>
+          </div>
+        </section>
+
         <div id="contact" className="reveal">
           <Contact />
         </div>

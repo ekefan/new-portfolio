@@ -19,7 +19,6 @@ const SystemStack: React.FC = () => {
               key={idx} 
               className={`group p-6 md:p-8 rounded-[1.5rem] md:rounded-2xl bg-[#050505] border border-white/5 hover:border-${cat.accent}-500/50 transition-all duration-500 relative overflow-hidden`}
             >
-              {/* Accent Glow */}
               <div className={`absolute -right-20 -top-20 w-40 h-40 bg-${cat.accent}-500/10 blur-[80px] transition-all group-hover:bg-${cat.accent}-500/20`}></div>
               
               <div className="mb-4 md:mb-6">{cat.icon}</div>
@@ -29,12 +28,20 @@ const SystemStack: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-2 md:gap-3">
-                {cat.skills.map((skill, sIdx) => (
-                  <div key={sIdx} className="flex items-center gap-3">
-                    <div className={`w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-${cat.accent}-500`}></div>
-                    <span className="text-[10px] md:text-sm font-mono-tech text-gray-300">{skill}</span>
-                  </div>
-                ))}
+                {cat.skills.map((skill, sIdx) => {
+                  const isPrimary = skill.includes('(Primary)');
+                  const displaySkill = skill.replace('(Primary)', '').trim();
+                  
+                  return (
+                    <div key={sIdx} className="flex items-center gap-3">
+                      <div className={`w-1 md:w-1.5 h-1 md:h-1.5 rounded-full ${isPrimary ? 'bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]' : `bg-${cat.accent}-500`}`}></div>
+                      <span className={`text-[10px] md:text-sm font-mono-tech ${isPrimary ? 'text-white font-bold' : 'text-gray-300'}`}>
+                        {displaySkill}
+                        {isPrimary && <span className="ml-2 text-[8px] text-blue-400/80 font-normal uppercase tracking-widest">[Lead]</span>}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
