@@ -58,9 +58,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: 'jam-forte',
     title: 'The Reliability Engine (Jam-Forte)',
     headline: '99.99% Uptime & Blue-Green Orchestration',
-    context: 'Automated infrastructure provisioning and cut release cycles from days to hours by building optimized CI/CD pipelines.',
+    context: 'Automated infrastructure provisioning and replaced legacy manual cycles with high-velocity on-commit automation.',
     tech: ['Terraform', 'GitHub Actions', 'Kubernetes'],
-    metrics: '99.99% Uptime, 2hr Release Cycle',
+    metrics: 'MTTR < 15m, < 5m Lead Time',
     category: 'DevOps'
   },
   {

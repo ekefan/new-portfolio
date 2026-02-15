@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SKILL_CATEGORIES } from '../constants';
 
@@ -6,11 +5,11 @@ const SystemStack: React.FC = () => {
   return (
     <section id="stack" className="py-24 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-left md:text-center mb-20 space-y-4">
           <h2 className="text-sm font-mono-tech text-blue-500 uppercase tracking-[0.3em]">The Architect's Toolkit</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-white">The Total Package</h3>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            My engineering philosophy centers on the complete lifecycle of a service, from the first line of code to global scalability.
+          <p className="text-gray-400 max-w-2xl md:mx-auto leading-relaxed">
+            My engineering philosophy centers on the complete lifecycle of a service—from the first line of code to global scalability, maintainable architecture, and everything in between. My specialized experience in networking, Linux internals, and low-level programming enables me to achieve peak performance and bulletproof reliability across the entire stack.
           </p>
         </div>
 

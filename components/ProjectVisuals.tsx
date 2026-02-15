@@ -106,41 +106,41 @@ export const JamForteVisual: React.FC = () => {
 
 export const JaegerVisual: React.FC = () => {
   return (
-    <div className="w-full h-full p-6 bg-[#080808] font-mono-tech overflow-hidden">
+    <div className="w-full h-full p-3 md:p-6 bg-[#080808] font-mono-tech overflow-hidden">
       <div className="flex justify-between mb-4">
-        <div className="text-[10px] text-emerald-500 uppercase tracking-widest">Distributed_Trace_Explorer</div>
-        <div className="text-[8px] text-gray-500">ID: trace-82f-11c9</div>
+        <div className="text-[7px] md:text-[10px] text-emerald-500 uppercase tracking-widest">Distributed_Trace_Explorer</div>
+        <div className="text-[7px] text-gray-500 hidden sm:block">ID: trace-82f-11c9</div>
       </div>
       
-      <div className="space-y-4">
+      <div className="space-y-3 md:space-y-4">
         <div className="relative">
-          <div className="h-6 bg-blue-500/20 border-l-2 border-blue-500 w-[90%] flex items-center px-2 text-[10px] text-blue-400">api-gateway :: GET /api/v1/auth</div>
-          <div className="mt-2 ml-4 space-y-2">
-            <div className="h-5 bg-purple-500/20 border-l-2 border-purple-500 w-[40%] flex items-center px-2 text-[10px] text-purple-400">auth-service :: VerifyToken</div>
-            <div className="h-5 bg-purple-500/20 border-l-2 border-purple-500 w-[30%] flex items-center px-2 text-[10px] text-purple-400 ml-4">redis :: GET session_832</div>
-            <div className="h-5 bg-emerald-500/20 border-l-2 border-emerald-500 w-[45%] flex items-center px-2 text-[10px] text-emerald-400">user-service :: GetProfile</div>
-            <div className="h-5 bg-emerald-500/20 border-l-2 border-emerald-500 w-[35%] flex items-center px-2 text-[10px] text-emerald-400 ml-4">postgres :: SELECT * FROM users</div>
+          <div className="h-5 md:h-6 bg-blue-500/20 border-l-2 border-blue-500 w-[95%] sm:w-[90%] flex items-center px-2 text-[7px] md:text-[10px] text-blue-400 whitespace-nowrap overflow-hidden">api-gateway :: GET /api/v1/auth</div>
+          <div className="mt-2 ml-1 md:ml-4 space-y-2">
+            <div className="h-4 md:h-5 bg-purple-500/20 border-l-2 border-purple-500 w-[55%] sm:w-[40%] flex items-center px-2 text-[7px] md:text-[10px] text-purple-400 whitespace-nowrap overflow-hidden">auth-service :: VerifyToken</div>
+            <div className="h-4 md:h-5 bg-purple-500/20 border-l-2 border-purple-500 w-[45%] sm:w-[30%] flex items-center px-2 text-[7px] md:text-[10px] text-purple-400 ml-2 md:ml-4 whitespace-nowrap overflow-hidden text-ellipsis">redis :: GET session_832</div>
+            <div className="h-4 md:h-5 bg-emerald-500/20 border-l-2 border-emerald-500 w-[60%] sm:w-[45%] flex items-center px-2 text-[7px] md:text-[10px] text-emerald-400 whitespace-nowrap overflow-hidden">user-service :: GetProfile</div>
+            <div className="h-4 md:h-5 bg-emerald-500/20 border-l-2 border-emerald-500 w-[50%] sm:w-[35%] flex items-center px-2 text-[7px] md:text-[10px] text-emerald-400 ml-2 md:ml-4 whitespace-nowrap overflow-hidden text-ellipsis">postgres :: SELECT * FROM users</div>
           </div>
         </div>
       </div>
 
-      <div className="mt-8 flex justify-center">
-        <div className="flex items-center gap-8">
+      <div className="mt-6 md:mt-8 flex justify-center">
+        <div className="flex items-center gap-2 md:gap-8 scale-75 md:scale-100">
           <div className="flex flex-col items-center">
-            <Cpu className="text-gray-700 mb-1" size={16} />
-            <span className="text-[8px] text-gray-600 uppercase">Gateway</span>
+            <Cpu className="text-gray-700 mb-1" size={12} />
+            <span className="text-[6px] md:text-[8px] text-gray-600 uppercase">Gateway</span>
           </div>
-          <div className="h-px w-8 bg-gray-800 relative">
+          <div className="h-px w-4 md:w-8 bg-gray-800 relative">
              <div className="absolute top-1/2 left-0 w-1 h-1 bg-emerald-500 rounded-full animate-flow"></div>
           </div>
           <div className="flex flex-col items-center">
-            <Server className="text-gray-700 mb-1" size={16} />
-            <span className="text-[8px] text-gray-600 uppercase">Svc_Auth</span>
+            <Server className="text-gray-700 mb-1" size={12} />
+            <span className="text-[6px] md:text-[8px] text-gray-600 uppercase">Svc_Auth</span>
           </div>
-          <div className="h-px w-8 bg-gray-800"></div>
+          <div className="h-px w-4 md:w-8 bg-gray-800"></div>
           <div className="flex flex-col items-center">
-            <Database className="text-gray-700 mb-1" size={16} />
-            <span className="text-[8px] text-gray-600 uppercase">DB_Primary</span>
+            <Database className="text-gray-700 mb-1" size={12} />
+            <span className="text-[6px] md:text-[8px] text-gray-600 uppercase">DB_Primary</span>
           </div>
         </div>
       </div>

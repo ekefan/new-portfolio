@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CASE_STUDIES } from '../constants';
 import { TelexVisual, JamForteVisual, JaegerVisual } from './ProjectVisuals';
@@ -24,12 +23,12 @@ const CaseStudies: React.FC = () => {
   return (
     <section id="cases" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="space-y-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+          <div className="space-y-4 text-left">
             <h2 className="text-sm font-mono-tech text-purple-500 uppercase tracking-[0.3em]">Recent Deployments</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white">Case Studies</h3>
           </div>
-          <p className="text-gray-400 max-w-md md:text-right leading-relaxed">
+          <p className="text-gray-400 max-w-md md:text-right text-left leading-relaxed">
             Tangible business results through robust engineering. I don't just ship features; I solve enterprise-scale constraints.
           </p>
         </div>

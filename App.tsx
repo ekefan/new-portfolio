@@ -153,8 +153,8 @@ const App: React.FC = () => {
         </div>
 
         <section id="ai-projects" className="max-w-7xl mx-auto px-6 reveal">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div className="space-y-4">
+          <div className="flex flex-col items-start mb-16 gap-8">
+            <div className="space-y-4 text-left">
               <div className="inline-flex items-center gap-2 text-blue-500 text-[10px] font-mono-tech uppercase tracking-[0.4em]">
                 <Satellite size={12} className="animate-pulse" /> R&D_CHANNEL
               </div>
