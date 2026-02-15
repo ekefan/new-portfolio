@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
           <div className="absolute -top-6 -right-6 hidden sm:block p-4 bg-[#121212]/80 backdrop-blur-sm border border-white/10 rounded-lg animate-bounce duration-[3000ms]">
             <Layers className="text-purple-400 mb-2" />
             <div className="text-[10px] font-mono-tech text-gray-400 uppercase">Kubernetes</div>
-            <div className="text-sm font-bold">Cluster Engineering</div>
+            <div className="text-sm font-bold">Cluster Management</div>
           </div>
           
           <div className="absolute -bottom-6 -left-6 hidden sm:block p-4 bg-[#121212]/80 backdrop-blur-sm border border-white/10 rounded-lg animate-bounce duration-[4000ms]">

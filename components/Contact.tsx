@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Github, Linkedin, Send, CheckCircle2, Loader2 } from 'lucide-react';
 
@@ -23,9 +22,6 @@ const Contact: React.FC = () => {
       
       const mailtoUrl = `mailto:ekefan.dev@gmail.com?subject=${subject}&body=${body}`;
       
-      // Creating a hidden anchor tag and clicking it with target="_blank" 
-      // is the most robust way to trigger mailto without triggering "Refused to Connect"
-      // in sandboxed or framed environments.
       const link = document.createElement('a');
       link.href = mailtoUrl;
       link.target = '_blank';
@@ -163,7 +159,7 @@ const Contact: React.FC = () => {
                     ) : (
                       <>
                         <Send className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-                        INIT_YOUR_PROJECT()
+                        INIT_YOUR_PROJECT
                       </>
                     )}
                   </button>

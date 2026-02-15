@@ -1,9 +1,26 @@
 
 import React from 'react';
-import { TrendingDown, Zap, ShieldCheck, ExternalLink } from 'lucide-react';
 import { CASE_STUDIES } from '../constants';
+import { TelexVisual, JamForteVisual, JaegerVisual } from './ProjectVisuals';
 
 const CaseStudies: React.FC = () => {
+  const renderVisual = (id: string) => {
+    switch (id) {
+      case 'telex':
+        return <TelexVisual />;
+      case 'jam-forte':
+        return <JamForteVisual />;
+      case 'jaeger':
+        return <JaegerVisual />;
+      default:
+        return (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-white/20 font-mono-tech text-[10px] tracking-widest uppercase mb-2">Internal Visualization Engine</div>
+          </div>
+        );
+    }
+  };
+
   return (
     <section id="cases" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -59,24 +76,10 @@ const CaseStudies: React.FC = () => {
                 </div>
               </div>
 
-              <div className="w-full lg:w-1/2 h-80 bg-[#121212] rounded-2xl overflow-hidden border border-white/5 relative group cursor-crosshair">
-                 <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-                    {/* Simulated Visualization */}
-                    <svg width="100%" height="100%" viewBox="0 0 400 300" className="opacity-20 transition-all duration-700 group-hover:scale-110 group-hover:opacity-40">
-                       <path d="M0,150 Q100,50 200,150 T400,150" fill="none" stroke="#3B82F6" strokeWidth="2" strokeDasharray="5,5" />
-                       <circle cx="50" cy="110" r="4" fill="#3B82F6" />
-                       <circle cx="150" cy="70" r="4" fill="#3B82F6" />
-                       <circle cx="250" cy="130" r="4" fill="#8B5CF6" />
-                       <circle cx="350" cy="150" r="4" fill="#10B981" />
-                       <line x1="50" y1="110" x2="150" y2="70" stroke="white" strokeWidth="0.5" strokeOpacity="0.2" />
-                       <line x1="150" y1="70" x2="250" y2="130" stroke="white" strokeWidth="0.5" strokeOpacity="0.2" />
-                       <line x1="250" y1="130" x2="350" y2="150" stroke="white" strokeWidth="0.5" strokeOpacity="0.2" />
-                    </svg>
-                    <div className="absolute flex flex-col items-center">
-                       <div className="text-white/20 font-mono-tech text-[10px] tracking-widest uppercase mb-2">Internal Visualization Engine</div>
-                       <ShieldCheck className="w-16 h-16 text-blue-500/20" />
-                    </div>
-                 </div>
+              <div className="w-full lg:w-1/2 h-80 bg-[#121212] rounded-2xl overflow-hidden border border-white/5 relative group">
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                  {renderVisual(study.id)}
+                </div>
               </div>
             </div>
           ))}

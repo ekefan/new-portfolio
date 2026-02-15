@@ -1,41 +1,68 @@
-
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ebenezer Emmanuel | ekefan.dev</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233B82F6'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='60' fill='white'>&gt;_</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #050505;
+            background-color: #030303;
             color: #f3f4f6;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         .font-mono-tech {
             font-family: 'JetBrains Mono', 'Fira Code', monospace;
         }
+        ::selection {
+            background-color: #3B82F6;
+            color: white;
+        }
+        /* Minimal Floating Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #0a0a0a;
+            background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-            background: #3B82F6;
-            border-radius: 4px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #2563EB;
+            background: rgba(59, 130, 246, 0.5);
         }
-        .glow-blue { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
-        .glow-purple { box-shadow: 0 0 15px rgba(139, 92, 246, 0.4); }
-        .glow-green { box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-        .line-glow-blue { background: linear-gradient(90deg, transparent, #3B82F6, transparent); }
+        
+        /* Elastic "Bounce" Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px) scale(0.96);
+            transition: opacity 1s ease-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform, opacity;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .glow-blue { box-shadow: 0 0 30px rgba(59, 130, 246, 0.1); }
+        .glass-island {
+            background: rgba(13, 13, 13, 0.4);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .bg-nebula {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+        }
     </style>
 <script type="importmap">
 {
@@ -50,9 +77,8 @@
 }
 </script>
 </head>
-<body>
+<body class="bg-nebula">
     <div id="root"></div>
-    <!-- This script tag is the crucial missing piece for local development -->
     <script type="module" src="/index.tsx"></script>
 </body>
 </html>
