@@ -22,6 +22,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       'Unit & Integration Testing',
       'Go (Primary)', 
       'Java (Spring Boot)', 
+      'Node.js (TypeScript)',
       'Python', 
       'PostgreSQL', 
       'Kafka', 
