@@ -24,7 +24,7 @@ const App: React.FC = () => {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 300 && rect.bottom >= 300) {
+          if (rect.top <= 400 && rect.bottom >= 400) {
             setActiveSection(sectionId);
             break;
           }
@@ -34,7 +34,8 @@ const App: React.FC = () => {
       const revealElements = document.querySelectorAll('.reveal');
       revealElements.forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.92) {
+        // Slightly early reveal for smoother feel as you scroll
+        if (rect.top < window.innerHeight * 0.95) {
           el.classList.add('active');
         }
       });
@@ -48,7 +49,7 @@ const App: React.FC = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 110; 
+      const offset = 100; 
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -62,9 +63,9 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen relative selection:bg-blue-600/30 bg-[#030303]">
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Dampened translate values for a smoother, slower parallax effect */}
-        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-blue-600/[0.03] blur-[150px] rounded-full" style={{ transform: `translateY(${scrollProgress * -0.2}px)` }}></div>
-        <div className="absolute bottom-[-10%] right-[-5%] w-[60%] h-[60%] bg-purple-600/[0.02] blur-[180px] rounded-full" style={{ transform: `translateY(${scrollProgress * 0.08}px)` }}></div>
+        {/* Even more dampened parallax for a buttery smooth background feel */}
+        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-blue-600/[0.03] blur-[150px] rounded-full" style={{ transform: `translateY(${scrollProgress * -0.15}px)` }}></div>
+        <div className="absolute bottom-[-10%] right-[-5%] w-[60%] h-[60%] bg-purple-600/[0.02] blur-[180px] rounded-full" style={{ transform: `translateY(${scrollProgress * 0.05}px)` }}></div>
       </div>
 
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden 2xl:flex flex-col gap-6 items-center p-2 group/nav">
@@ -83,7 +84,7 @@ const App: React.FC = () => {
             <span className={`absolute right-10 text-[8px] font-mono-tech tracking-[0.2em] transition-all duration-500 opacity-0 group-hover:opacity-100 whitespace-nowrap bg-blue-600 text-white px-2 py-0.5 rounded pointer-events-none translate-x-2 group-hover:translate-x-0`}>
               {sec.label}
             </span>
-            <div className={`w-1.5 h-1.5 rounded-full transition-all duration-700 ${
+            <div className={`w-1.5 h-1.5 rounded-full transition-all duration-1000 ${
               activeSection === sec.id 
                 ? 'bg-blue-500 scale-[2.5] shadow-[0_0_15px_rgba(59,130,246,1)]' 
                 : 'bg-white/10 group-hover:bg-blue-400 group-hover:scale-150'
@@ -104,7 +105,7 @@ const App: React.FC = () => {
 
       <Navbar onNavigate={scrollToSection} />
       
-      <main className="relative z-10 space-y-24 md:space-y-48">
+      <main className="relative z-10 space-y-12 md:space-y-32 lg:space-y-48">
         <div id="hero" className="reveal active bg-[#030303]">
           <Hero />
         </div>
@@ -142,7 +143,6 @@ const App: React.FC = () => {
           <CaseStudies />
         </div>
 
-        {/* NEURAL_LAB / SANDBOX - Not in Nav */}
         <section className="py-24 md:py-48 bg-[#030303] reveal overflow-hidden border-y border-white/[0.02]">
           <div className="max-w-7xl mx-auto px-6">
              <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
